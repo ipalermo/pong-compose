@@ -40,7 +40,7 @@ class BoardViewModel : ViewModel() {
 
     private fun Racket.move(direction: Direction) = copy(
         topLeft = topLeft + DpOffset(
-            x = if (direction == Direction.Left) (-10).dp else 10.dp,
+            x = if (direction == Direction.Left) speed * -1 else speed,
             y = 0.dp
         )
     )
@@ -138,6 +138,7 @@ enum class Status {
 }
 
 data class Racket(
+    val speed: Dp = 10.dp,
     val boardSize: DpSize = DpSize.Zero,
     val topLeftY: Dp = 8.dp,
     val size: DpSize = DpSize(
