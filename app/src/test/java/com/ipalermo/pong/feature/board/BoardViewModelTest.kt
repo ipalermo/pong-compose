@@ -38,4 +38,27 @@ class BoardViewModelTest {
         val expectedInitialBallPosition = DpOffset(100.dp, 100.dp)
         assertEquals(expectedInitialBallPosition, viewModel.boardState.first().ball.position)
     }
+
+    @Test
+    fun bottomRacketIsInitiallyCentered() = runTest {
+        // Given the board has been measured
+        viewModel.onBoardMeasured(DpSize(200.dp, 200.dp))
+
+        // the bottom racket is centered
+        val expectedInitialRacketPosition = DpOffset(75.dp, 176.dp)
+        assertEquals(expectedInitialRacketPosition, viewModel.boardState.first().bottomRacket.topLeft)
+    }
+
+    @Test
+    fun pressingLeftMoveRacketToTheLeft() = runTest {
+        // Given the board has been measured
+        viewModel.onBoardMeasured(DpSize(200.dp, 200.dp))
+
+        // When player taps on bottom left arrow button
+        viewModel.moveBottomRacket(Direction.Left)
+
+        // Then the bottom racket moves left
+        val expectedRacketPositionAfterMove = DpOffset(65.dp, 176.dp)
+        assertEquals(expectedRacketPositionAfterMove, viewModel.boardState.first().bottomRacket.topLeft)
+    }
 }
