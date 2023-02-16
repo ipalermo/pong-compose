@@ -81,8 +81,8 @@ data class BoardState(
     val boardSize: DpSize = DpSize.Zero,
     val status: Status = Status.Playing,
     val ball: Ball = Ball(),
-    val topRacket: Racket = Racket(boardSize),
-    val bottomRacket: Racket = Racket(boardSize)
+    val topRacket: Racket = Racket(boardSize = boardSize),
+    val bottomRacket: Racket = Racket(boardSize = boardSize)
 ) {
     private val bottomRacketCollision = ball.position.y + ball.radius >= bottomRacket.topLeftY
             && ball.position.x in bottomRacket.topLeft.x..(bottomRacket.topLeft.x + bottomRacket.size.width)
