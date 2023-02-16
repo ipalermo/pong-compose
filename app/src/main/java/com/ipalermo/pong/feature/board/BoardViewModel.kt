@@ -61,18 +61,27 @@ class BoardViewModel : ViewModel() {
     private fun updateBall() = _boardState.update { state ->
         val nextDirection = if (state.ballRacketCollision) state.ball.direction.opposite()
             else state.ball.direction
-        val newXPos = state.ball.position.x + 1.dp / state.nextSlope
-        val nexYPos = state.ball.position.y + if (nextDirection == Direction.Down) state.ball.speed
-            else state.ball.speed * -1
-        val newPosition = DpOffset(newXPos, nexYPos)
         state.copy(
             ball = state.ball.copy(
                 slope = state.nextSlope,
-                position = newPosition,
+                position = state.nextPosition(nextDirection),
                 direction = nextDirection
             )
         )
     }
+
+    /*
+    The next position coordinate Y2 in the vertical Y axis is always calculated as the current
+    position Y1+1 or Y1-1 depending on the ball direction
+
+    The next position coordinate X2 in the horizontal axis is calculated based on
+    the linear equation Y2 - Y1 = m * (X2 - X1), where we know the current position (x1, x2) and the
+    slope m, so can we easily calculate X2 = (Y2 - Y1) / m + X1. In our case Y2 - Y1 is always 1
+    */
+    private fun BoardState.nextPosition(nextDirection: Direction) = DpOffset(
+        x = ball.position.x + 1.dp / nextSlope,
+        y = ball.position.y + if (nextDirection == Direction.Down) ball.speed else ball.speed * -1
+    )
 
     private fun BoardState.ballBoardEdgeCollision() = ball.position.x - ball.radius <= 0f.dp
             || ball.position.x + ball.radius >= boardSize.width
@@ -95,7 +104,7 @@ data class BoardState(
                 && ball.position.x in topRacket.topLeft.x..(topRacket.topLeft.x + topRacket.size.width)
 
     private val ballBoardEdgeCollision = ball.position.x - ball.radius <= 0f.dp
-    || ball.position.x + ball.radius >= boardSize.width
+            || ball.position.x + ball.radius >= boardSize.width
 
     val nextSlope = if (bottomRacketCollision) {
         val slopeInclination =
