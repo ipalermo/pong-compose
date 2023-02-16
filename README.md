@@ -33,41 +33,41 @@ As a user, I would like to play the game with a friend, with a phone  or tablet 
 
 As a user, I need to control my bat my touching the left and right corners of the phone nearest to me. Touching the left corner should make my bat
 move left, the right corner should make it move right, at constant speed. When I am not touching, the bat should not move. The other player
-should be able to control their bat with the other corners of the screen. - NOT DONE: Currently can work by sliding the paddle left and right
+should be able to control their bat with the other corners of the screen. - DONE
 
 As a user, I want the game to wait to start until I indicate I am ready (by touching the screen). - There is a PLAY screen before starting the game: DONE
 
 As a user, I want to be able to bounce the ball off my bat.  - DONE
 
-As a user, I want to be able to score when my opponent misses the ball,  and for it to fall off the screen past their bat (on the top or bottom of the screen). - DONE
+As a user, I want to be able to score when my opponent misses the ball,  and for it to fall off the screen past their bat (on the top or bottom of the screen). - NOT DONE
 
 As a user, I want to be able to bounce the ball off the left and right sides of the screen - DONE
 
-As a user, I want to be able to see how many times I have scored. - DONE
+As a user, I want to be able to see how many times I have scored. - NOT DONE
 
-As a user, I would like to hear a sound when I hit the ball with my bat (See [sfxr.me](https://sfxr.me/) for some useful sounds).
+As a user, I would like to hear a sound when I hit the ball with my bat (See [sfxr.me](https://sfxr.me/) for some useful sounds). NOT DONE
 
-As a user, I would like to affect the speed and direction of the ball based on where the ball hits my bat. - DONE
+As a user, I would like to affect the speed and direction of the ball based on where the ball hits my bat. - DONE (not affecting the speed, only direction)
 
-As a user, I would like to hear a sound when I score.
+As a user, I would like to hear a sound when I score. NOT DONE
 
-As a user, I would like to hear a warning sound which soudns 'more serious' (eg louder, or more dissonant) the closer I get to missing the ball.
+As a user, I would like to hear a warning sound which soudns 'more serious' (eg louder, or more dissonant) the closer I get to missing the ball. NOT DONE
 
 As a user, I would like to be able to use the game in a horizontal or vertical orientation. - DONE
 
 As a user, I would like the game constants (bat speed, ball speed, bat length etc) to adapt based on the orientation, so that the game
-has a similar hardness
+has a similar hardness - NOT DONE
 
 As a user, I would like the game constants (bat speed, ball speed, bat length etc) to adapt based on the screen size, so that the game
-has a similar hardness
+has a similar hardness - NOT DONE
 
-As a user, I would like a to be able to replace the bat with an image of my choice
+As a user, I would like a to be able to replace the bat with an image of my choice - NOT DONE
 
-As a user, I would like a to be able to replace the ball with an image of my choice
+As a user, I would like a to be able to replace the ball with an image of my choice - NOT DONE
 
-As a user, I would like replacement images to affect the bat/ball contact dynamics.
+As a user, I would like replacement images to affect the bat/ball contact dynamics. - NOT DONE
 
-As a user, I would like an option to play with another user on the same lcoal network.
+As a user, I would like an option to play with another user on the same local network. - NOT DONE
 
 ## How to submit your task
 
