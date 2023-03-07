@@ -1,4 +1,4 @@
-# Kano Android Skills Challenge
+# Android Skills Challenge
 
 
 **Goal** Implement a very simple game similar to the 1972 game 'pong'
